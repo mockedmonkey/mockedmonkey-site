@@ -100,10 +100,13 @@
 
   <section class="tight">
     <div class="wrap">
-      <p class="eyebrow" style="text-align:center; margin-bottom:10px">A Guitar Hero-style game built around the track</p>
-      <div style="display:flex; justify-content:center">
-        <iframe src="https://itch.io/embed/5086548" style="width:100%; max-width:552px; height:167px" frameborder="0"><a href="https://mockedmonkey.itch.io/immovable-game">Immovable - the game by mockedmonkey</a></iframe>
+      <div class="flyer" id="game-card" style="max-width:480px; margin:0 auto; text-align:center; padding:36px 28px">
+        <p class="eyebrow" style="margin-bottom:10px">A Guitar Hero-style game built around the track</p>
+        <h3 style="margin-bottom:18px">Immovable: the game</h3>
+        <button type="button" class="btn accent" id="play-game-btn" style="display:inline-flex; cursor:pointer; border:0; font:inherit">Play now</button>
+        <p class="dim" style="margin-top:14px; font-family:var(--mono); font-size:.78rem">Loads right here, no download, no account needed. <a href="https://mockedmonkey.itch.io/immovable-game" target="_blank" rel="noopener">Prefer it full page? Open on itch.io</a></p>
       </div>
+      <div class="embed" id="game-embed" style="display:none; max-width:900px; margin:0 auto"></div>
     </div>
   </section>
 
