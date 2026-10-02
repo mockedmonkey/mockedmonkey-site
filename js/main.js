@@ -147,17 +147,4 @@ document.addEventListener('DOMContentLoaded', () => {
         showsList.style.display = 'none';
       });
   }
-
-  // Immovable game: load the GitHub Pages build inline on click, instead of
-  // always paying for a ~9MB iframe the visitor may never ask for.
-  const playGameBtn = document.getElementById('play-game-btn');
-  if (playGameBtn) {
-    playGameBtn.addEventListener('click', () => {
-      const card = document.getElementById('game-card');
-      const embed = document.getElementById('game-embed');
-      embed.innerHTML = '<iframe src="https://itch.io/embed-upload/19509647?color=333333" title="Immovable, the game" loading="lazy" allow="autoplay" allowfullscreen></iframe>';
-      card.style.display = 'none';
-      embed.style.display = 'block';
-    });
-  }
 });
