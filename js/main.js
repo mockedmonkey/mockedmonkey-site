@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playGameBtn.addEventListener('click', () => {
       const card = document.getElementById('game-card');
       const embed = document.getElementById('game-embed');
-      embed.innerHTML = '<iframe src="https://mockedmonkey.github.io/immovable-game/" title="Immovable, the game" loading="lazy" allow="autoplay" allowfullscreen></iframe>';
+      embed.innerHTML = '<iframe src="https://itch.io/embed-upload/19509647?color=333333" title="Immovable, the game" loading="lazy" allow="autoplay" allowfullscreen></iframe>';
       card.style.display = 'none';
       embed.style.display = 'block';
     });
