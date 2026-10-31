@@ -17,6 +17,33 @@
       "displayDate": "04.10.26",
       "venue": "WoofStock Festival",
       "city": "Parco del Cjiastenar, Fagagna (UD), Italy"
+    },
+    {
+      "date": "2026-11-10",
+      "displayDate": "10.11.26",
+      "venue": "Echo Music Contest (Semifinali)",
+      "city": "Casinalbo (MO), Italy"
+    },
+    {
+      "date": "2026-11-11",
+      "displayDate": "11.11.26",
+      "venue": "Dude",
+      "city": "Bologna, Italy",
+      "lineup": "Gabriele Palmieri + LoSpazio Band + Mocked Monkey"
+    },
+    {
+      "date": "2026-11-18",
+      "displayDate": "18.11.26",
+      "venue": "Circolo della pace",
+      "city": "Bologna, Italy",
+      "lineup": "Gabriele Palmieri + Mocked Monkey"
+    },
+    {
+      "date": "2026-11-26",
+      "displayDate": "26.11.26",
+      "venue": "L'altro Spazio",
+      "city": "Bologna, Italy",
+      "lineup": "Francis and the Atronauts + Manuela Raduano + Mocked Monkey"
     }
   ]
 }

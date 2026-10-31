@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <li class="show-item">
             <span class="date">${s.displayDate || s.date}</span>
             <span class="place">${s.venue || ''}${s.venue && s.city ? ', ' : ''}${s.city || ''}
+              ${s.lineup ? `<small>${s.lineup}</small>` : ''}
               <small>
                 ${s.link ? `<a href="${s.link}" target="_blank" rel="noopener">${s.linkLabel || 'Details'}</a> &middot; ` : ''}<a href="${mapUrl}" target="_blank" rel="noopener" class="map-pin" aria-label="Open in Google Maps" title="Open in Google Maps">📍</a>
               </small>
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
           endDate: s.date,
           eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
           eventStatus: 'https://schema.org/EventScheduled',
-          description: `Mocked Monkey live at ${s.venue || ''}${s.venue && s.city ? ', ' : ''}${s.city || ''}.`,
+          description: `Mocked Monkey live at ${s.venue || ''}${s.venue && s.city ? ', ' : ''}${s.city || ''}.${s.lineup ? ' Line-up: ' + s.lineup + '.' : ''}`,
           image: eventImage,
           location: {
             '@type': 'Place',
