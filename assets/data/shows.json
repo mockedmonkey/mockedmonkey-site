@@ -19,18 +19,6 @@
       "city": "Parco del Cjiastenar, Fagagna (UD), Italy"
     },
     {
-      "date": "2026-11-11",
-      "displayDate": "11.11.26",
-      "venue": "Gabriele Palmieri + LoSpazio Band + Mocked Monkey",
-      "city": "Dude, Bologna"
-    },
-    {
-      "date": "2026-11-18",
-      "displayDate": "18.11.26",
-      "venue": "Gabriele Palmieri + Mocked Monkey",
-      "city": "Circolo della pace, Bologna"
-    },
-    {
       "date": "2026-11-26",
       "displayDate": "26.11.26",
       "venue": "Francis and the Atronauts + Manuela Raduano + Mocked Monkey",
@@ -40,7 +28,21 @@
       "date": "2026-12-10",
       "displayDate": "10.12.26",
       "venue": "Echo Sound (Semifinali)",
-      "city": "Seven, Casinalbo (MO)"
+      "city": "Seven Club, Casinalbo (MO)",
+      "mapUrl": "https://maps.app.goo.gl/vuW5TncWErE5FshFA"
+    },
+    {
+      "date": "2026-12-11",
+      "displayDate": "11.12.26",
+      "venue": "Gabriele Palmieri + LoSpazio Band + Mocked Monkey",
+      "city": "Dude, Bologna",
+      "mapUrl": "https://maps.app.goo.gl/eiPhNUrnfbEt5jjx8"
+    },
+    {
+      "date": "2026-12-18",
+      "displayDate": "18.12.26",
+      "venue": "Gabriele Palmieri + Mocked Monkey",
+      "city": "Circolo della pace, Bologna"
     }
   ]
 }

@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         showsList.innerHTML = upcoming.map(s => {
-          const mapQuery = encodeURIComponent([s.venue, s.city].filter(Boolean).join(', '));
-          const mapUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+          const mapQuery = encodeURIComponent(s.city || s.venue || '');
+          const mapUrl = s.mapUrl || `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
           return `
           <li class="show-item">
             <span class="date">${s.displayDate || s.date}</span>
