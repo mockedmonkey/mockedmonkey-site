@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <li class="show-item">
             <span class="date">${s.displayDate || s.date}</span>
             <span class="place">${s.venue || ''}${s.venue && s.city ? ', ' : ''}${s.city || ''}
-              ${s.lineup ? `<small>${s.lineup}</small>` : ''}
               <small>
                 ${s.link ? `<a href="${s.link}" target="_blank" rel="noopener">${s.linkLabel || 'Details'}</a> &middot; ` : ''}<a href="${mapUrl}" target="_blank" rel="noopener" class="map-pin" aria-label="Open in Google Maps" title="Open in Google Maps">📍</a>
               </small>
@@ -101,15 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // out of sync the way a hand-written copy would.
         const COUNTRY_CODES = { 'italy': 'IT', 'italia': 'IT' };
         function parseAddress(cityField) {
+          // The trailing country is optional on the page (it is implied),
+          // so strip it if present and default the structured data to IT.
           const parts = (cityField || '').split(',').map(p => p.trim()).filter(Boolean);
-          const address = { '@type': 'PostalAddress' };
-          if (parts.length >= 3) {
+          const address = { '@type': 'PostalAddress', addressCountry: 'IT' };
+          if (parts.length && COUNTRY_CODES[parts[parts.length - 1].toLowerCase()]) {
+            address.addressCountry = COUNTRY_CODES[parts.pop().toLowerCase()];
+          }
+          if (parts.length >= 2) {
             address.streetAddress = parts[0];
             address.addressLocality = parts[1];
-            address.addressCountry = COUNTRY_CODES[parts[parts.length - 1].toLowerCase()] || parts[parts.length - 1];
-          } else if (parts.length === 2) {
-            address.addressLocality = parts[0];
-            address.addressCountry = COUNTRY_CODES[parts[1].toLowerCase()] || parts[1];
           } else if (parts.length === 1) {
             address.addressLocality = parts[0];
           }
@@ -119,12 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const eventImage = 'https://mockedmonkey.com/assets/images/marasma-cover.jpg';
         const graph = upcoming.map(s => ({
           '@type': 'MusicEvent',
-          name: `Mocked Monkey at ${s.venue || 'live'}`,
+          name: /mocked monkey/i.test(s.venue || '') ? s.venue : `Mocked Monkey at ${s.venue || 'live'}`,
           startDate: s.date,
           endDate: s.date,
           eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
           eventStatus: 'https://schema.org/EventScheduled',
-          description: `Mocked Monkey live at ${s.venue || ''}${s.venue && s.city ? ', ' : ''}${s.city || ''}.${s.lineup ? ' Line-up: ' + s.lineup + '.' : ''}`,
+          description: `Mocked Monkey live at ${s.venue || ''}${s.venue && s.city ? ', ' : ''}${s.city || ''}.`,
           image: eventImage,
           location: {
             '@type': 'Place',
